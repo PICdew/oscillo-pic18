@@ -1,4 +1,8 @@
 \documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper, total={6in, 10in}]{geometry}
+
+\pagenumbering{arabic} 
 
 \title{\textbf{PIC Numeric Oscilloscope}}
 \author{Matthieu 'Freeman' Vienot}
@@ -18,16 +22,41 @@ I hope you will enjoy reading this document as much as I enjoyed creating it. If
 
 \section {How does it work ?}
 
+This section details the inner workings of the oscilloscope.
+
 \subsection{Input}
 
-\subsubsection{Amplification stage}
+To draw the function provided to the oscilloscipe, it first needs to be processed. There is two stages of input : the modulation stage, where the signal gets scaled and clamped, and the numerical acquisition, where the signal gets transformed to binary data.
 
+\subsubsection{Modulation stage}
+
+This stage modulates the input signal. The input voltage can range from -15V to 15V. The output voltage of this stage needs to go from 0V (LOW) to 5V (HIGH).
+
+A series of operational amplifiers are wired together to clamp the input tension to $[-15V;15V]$. Then, the signal is multiplicated to a scale constant.
+
+The output tension $U_{out}(t)$ can be expressed in function of the input voltage $U_{in}(t)$ :
+
+\[ U = clamp((U_{in} - U_{zero}s) \cdot \frac{U_{scale}}{10}, [-15;15]) \]
+
+
+
+\subsubsection{Numerical acquisition}
 
 \subsection{Output}
 
 \subsubsection{Composite protocol}
 
 \subsubsection{Graphical interface}
+
+
+\section {How do I make one ?}
+
+\subsection{Making the circuit}
+
+\subsection{Program the PIC}
+
+\subsection{Add the components}
+
 
 
 \end{document}
