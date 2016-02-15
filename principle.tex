@@ -11,51 +11,51 @@
 
 \maketitle
 
-\section{What is this ?}
-\subsection {\Large\bfseries{Short presentation}}
-Do you practice electronics ? If you're reading this, it is very much likely. Have you ever been in need of an oscilloscope ? Have you ever been disappointer by the price of oscilloscopes online ? Well, no more.
+\section{Qu'est-ce que ceci ?}
+\subsection {\Large\bfseries{Courte présentation}}
+Pratiquez vous l'electronique ? Si tel est le cas, avez vous déja eu le besoin de recourir a un oscilloscope pour un de vos projets ? Avez vous déja été repoussé par le prix élevé des oscilloscopes du commerce ? Si oui, ne cherchez plus.
 
-This project (accessible at \emph{http://github.com/iLambda/oscillo-pic18}) is a numeric oscilloscope made with PIC18F4550.
+Ce projet (accessible at \emph{http://github.com/iLambda/oscillo-pic18}) est un oscilloscope numérique réalisé à base de PIC18F4550. Son but est de détailler la fabrication d'un petit oscilloscope sans prétention destiné aux amateurs.
 
-\subsection{Feedback}
-I hope you will enjoy reading this document as much as I enjoyed creating it. If you have comments, suggestions or wish to report an issue you are experiencing - contact us at: \emph{me@ilambda.io}.
+\subsection{Commentaires}
+Si vous avez des remarques ou des commentaires - envoyez un mail a l'adresse \emph{me@ilambda.io}.
 
-\section {How does it work ?}
+\section {Comment ça marche?}
 
-This section details the inner workings of the oscilloscope.
+Cette section a pour but de détailler le fonctionnemennt interne de l'oscilloscope.
 
-\subsection{Input}
+\subsection{Entrée}
 
-To draw the function provided to the oscilloscipe, it first needs to be processed. There is two stages of input : the modulation stage, where the signal gets scaled and clamped, and the numerical acquisition, where the signal gets transformed to binary data.
+Afin de dessiner a l'écran la tension fournie a l'oscilloscope, il faut qu'elle soit préalablement traitée. Deux étages sont ainsi placés avant le traitement : l'étage de modulation, où le signal est translaté et mis à l'échelle, et l'étage d'acquisition numérique, ou le signal est transformé en données numériques.
 
-\subsubsection{Modulation stage}
+\subsubsection{Étage de modulation}
 
-This stage modulates the input signal. The input voltage can range from -15V to 15V. The output voltage of this stage needs to go from 0V (LOW) to 5V (HIGH).
+Cet étage module le signal d'entrée. Ce dernier peut être compris entre -15V et 15V. La tension de sortie de cet étage va de 0V (état LOW) à 5V (état HIGH).
 
-A series of operational amplifiers are wired together to clamp the input tension to $[-15V;15V]$. Then, the signal is multiplicated to a scale constant.
+Plusieurs amplificateurs opérationnels sont connectés ensemble afin de contraindre la tension d'entrée entre 15V et -15V. Ensuite, le signal est multiplié par une constante d'échelle.
 
-The output tension $U_{out}(t)$ can be expressed in function of the input voltage $U_{in}(t)$ :
+La tension de sortie $U_{out}(t)$ peut être exprimée en fonction de la tension d'entrée $U_{in}(t)$ :
 
 \[ U = clamp_{[-15;15]}((U_{in} - U_{zero}) \cdot \frac{U_{scale}}{10}) \]
 
 
 
-\subsubsection{Numerical acquisition}
+\subsubsection{Acquisition numérique}
 
-\subsection{Output}
+\subsection{Sortie}
 
-\subsubsection{Composite protocol}
+\subsubsection{Protocole vidéo composite}
 
-\subsubsection{Graphical interface}
+\subsubsection{Interface graphique}
 
 
-\section {How do I make one ?}
+\section {Comment réaliser ce montage ?}
 
-\subsection{Making the circuit}
+\subsection{Fabriquer le circuit}
 
-\subsection{Program the PIC}
+\subsection{Programmer le PIC}
 
-\subsection{Add the components}
+\subsection{Ajouter les composants}
 
 
 
