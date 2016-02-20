@@ -1,3 +1,8 @@
 *.tex.swp
+*.s##
+
 
 tipe/
+/firmware/mplab/nbproject/private/
+/firmware/nbproject/private/
+/firmware/mplab/build/default/
